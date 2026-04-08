@@ -30,14 +30,63 @@ Dự án được xây dựng với các công nghệ:
 ⚡ Hiệu năng tốt, load nhanh
 🧩 Dễ chỉnh sửa nội dung
 ⚙️ Getting Started
+
+📋 Yêu cầu hệ thống:
+- Python 3.8+
+- Node.js 14+
+- SQLite (đã tích hợp)
+
 📥 Clone project
 git clone https://github.com/<your-username>/<your-repo>.git
-📦 Cài đặt
-npm install
-▶️ Chạy project
-npm start
 
-👉 Truy cập: http://localhost:3000
+📦 Cài đặt dependencies
+
+# Backend (Django)
+pip install -r requirements.txt
+
+# Frontend (React)
+npm install
+
+🗄️ Thiết lập Database
+
+# Tạo và chạy migrations
+python manage.py makemigrations
+python manage.py migrate
+
+# Tạo superuser (tùy chọn)
+python manage.py createsuperuser
+
+▶️ Chạy ứng dụng
+
+# Chạy cả frontend và backend cùng lúc
+npm run dev
+
+# Hoặc chạy riêng:
+# Backend: npm run backend
+# Frontend: npm run frontend
+
+👉 Truy cập:
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:8000/api
+- Admin: http://localhost:8000/admin
+
+🔐 Authentication
+
+Website sử dụng Django REST Auth cho authentication:
+- Đăng ký/Đăng nhập qua API
+- JWT Token-based authentication
+- Bảo mật endpoints
+
+📊 Database vs LocalStorage
+
+**Trước đây:** Dữ liệu lưu trong localStorage (chỉ trên máy cá nhân)
+**Bây giờ:** Dữ liệu lưu trong SQLite database (chia sẻ cho tất cả người dùng)
+
+**Lợi ích của Database:**
+✅ Tất cả người dùng đều thấy nội dung
+✅ Dữ liệu persistent, không mất khi refresh
+✅ Bảo mật và quản lý tốt hơn
+✅ Khả năng mở rộng cao
 
 🧑‍💻 Customization
 
